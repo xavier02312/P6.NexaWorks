@@ -16,10 +16,9 @@
   </Connection>
 </Query>
 
-bool statut = Util.ReadLine("Saisissez 'en cours'") == "resolus";
 
 var result = from t in Tickets.AsNoTracking()
-where t.Statut == statut
+where t.Statut == false
 select new {
 			t.Description,
 			t.DateDeCreation
