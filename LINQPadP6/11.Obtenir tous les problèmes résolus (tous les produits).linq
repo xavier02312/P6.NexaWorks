@@ -18,7 +18,7 @@
 
 
 var result = from t in Tickets.AsNoTracking()
-where t.Statut == true
+where t.Statut == "résolus"
 select new {
 			t.Resolution,
 			t.DateDeResolution

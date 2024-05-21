@@ -21,7 +21,7 @@ string versionId = Util.ReadLine("Saisissez le Code Version ?");
 string motCle = Util.ReadLine("Saisissez le Mot clé de Recherche ?");
 
 var result = from t in Tickets.AsNoTracking()
-where t.Statut == true && 
+where t.Statut == "résolus" && 
 		t.Resolution.Contains(motCle) &&
 		(string.IsNullOrEmpty(produitId) || t.ProduitId.ToString() == produitId) && 
 		(string.IsNullOrEmpty(versionId) || t.VersionId.ToString() == versionId)  

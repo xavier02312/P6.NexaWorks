@@ -23,7 +23,7 @@ string DateFin = Util.ReadLine("Saisissez la Date de Fin: (AAAA/MM/JJ)");
 string motCle = Util.ReadLine("Saisissez le Mot clé de Recherche ?");
 
 var result = from t in Tickets.AsNoTracking()
-where t.Statut == true && t.ProduitId.ToString() == produitId && 
+where t.Statut == "résolus" && t.ProduitId.ToString() == produitId && 
 						t.Resolution.Contains(motCle) &&
 						t.DateDeResolution >= DateOnly.Parse(DateDebut) && t.DateDeResolution <= DateOnly.Parse(DateFin) &&
 						(string.IsNullOrEmpty(versionId) || t.VersionId.ToString() == versionId)

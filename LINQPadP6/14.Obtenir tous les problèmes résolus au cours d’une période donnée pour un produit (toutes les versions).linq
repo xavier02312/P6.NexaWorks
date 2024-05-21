@@ -21,7 +21,7 @@ string DateDebut = Util.ReadLine("Saisissez la Date de Debut: (AAAA/MM/JJ)");
 string DateFin = Util.ReadLine("Saisissez la Date de Fin: (AAAA/MM/JJ)");
 
 var result = from t in Tickets.AsNoTracking()
-where t.ProduitId.ToString() == produitId && t.Statut == true && t.DateDeResolution >= DateOnly.Parse(DateDebut) && t.DateDeResolution <= DateOnly.Parse(DateFin)
+where t.ProduitId.ToString() == produitId && t.Statut == "résolus" && t.DateDeResolution >= DateOnly.Parse(DateDebut) && t.DateDeResolution <= DateOnly.Parse(DateFin)
 select new { 
 			t.Resolution,
 			t.ProduitId,

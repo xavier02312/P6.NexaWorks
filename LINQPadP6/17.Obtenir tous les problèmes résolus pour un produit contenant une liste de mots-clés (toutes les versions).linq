@@ -20,7 +20,7 @@ string produitId = Util.ReadLine("Saisissez le Code Produit ?");
 string motCle = Util.ReadLine("Saisissez le Mot clé de Recherche ?");
 
 var result = from t in Tickets.AsNoTracking()
-where t.Statut == true&& t.ProduitId.ToString() == produitId && t.Resolution.Contains(motCle)
+where t.Statut == "résolus" && t.ProduitId.ToString() == produitId && t.Resolution.Contains(motCle)
 select new { 
 			t.Resolution,
 			t.ProduitId

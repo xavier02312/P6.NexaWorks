@@ -19,7 +19,7 @@
 string produitId = Util.ReadLine("Saisissez le Code Produit ?");
 
 var result = from t in Tickets.AsNoTracking()
-where t.ProduitId.ToString() == produitId && t.Statut == true
+where t.ProduitId.ToString() == produitId && t.Statut == "résolus"
 select new { 
 			t.Resolution,
 			t.ProduitId

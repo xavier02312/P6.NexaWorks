@@ -18,7 +18,7 @@
 
 
 var result = from t in Tickets.AsNoTracking()
-where t.Statut == false
+where t.Statut == "en cours"
 select new {
 			t.Description,
 			t.DateDeCreation

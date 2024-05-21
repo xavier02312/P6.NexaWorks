@@ -19,7 +19,7 @@
 string motCle = Util.ReadLine("Saisissez le Mot clé de Recherche ?");
 
 var result = from t in Tickets.AsNoTracking()
-where t.Statut == false && t.Description.Contains(motCle)
+where t.Statut == "en cours" && t.Description.Contains(motCle)
 select new { 
 			t.Description};
  result.Dump(); 

@@ -20,7 +20,7 @@ string produitId = Util.ReadLine("Saisissez le Code Produit ?");
 string versionId = Util.ReadLine("Saisissez le Code Version ?");
 
 var result = from t in Tickets.AsNoTracking()
-where t.Statut == true &&
+where t.Statut == "résolus" &&
 			(string.IsNullOrEmpty(produitId) || t.ProduitId.ToString() == produitId) &&
  			(string.IsNullOrEmpty(versionId) || t.VersionId.ToString() == versionId) 
 select new { 

@@ -19,6 +19,6 @@
 string motCle = Util.ReadLine("Saisissez le Mot clé de Recherche ?");
 
 var result = from t in Tickets.AsNoTracking()
-where t.Statut == true && t.Resolution.Contains(motCle)
+where t.Statut == "résolus" && t.Resolution.Contains(motCle)
 select new { t.Resolution};
  result.Dump(); 
